@@ -1,0 +1,204 @@
+@import url("Transparency.css")
+    layer(HighPriority)
+    (-moz-platform: linux);
+
+@import url("WindowButtons.css")
+    layer(HighPriority)
+    (-moz-platform: linux);
+
+@import url("WindowButtonsBasic.css")
+    layer(HighPriority)
+    (-moz-platform: linux);
+
+@import url("AeroTweakChromeBorderConnect.css") layer(HighPriority) (-moz-platform: linux);
+@import url("Tooltips.css") layer(HighPriority) (-moz-platform: linux);
+
+@media (-moz-bool-pref: "userChromes.ChromiumFX.HiDPI")
+{
+    :root
+    {
+        --aero-padding: 8px;
+        --aero-border: 1px;
+        --aero-top-padding-windowed-menu: 4px;
+        --aero-top-padding-windowed: 24px;
+        --aero-top-padding-maximized: 12px;
+    }
+}
+
+@media not (-moz-bool-pref: "userChromes.ChromiumFX.HiDPI")
+{
+    :root
+    {
+        --aero-padding: 5px;
+        --aero-border: 1px;
+        --aero-top-padding-windowed-menu: 4px;
+        --aero-top-padding-windowed: 16px;
+        --aero-top-padding-maximized: 12px;
+    }
+}
+
+/* { */
+
+#main-window
+{
+    min-width: 400px !important;
+    min-height: 151px !important;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* Aero outer and inner borders */
+/* System theme, not maximized, tabs in titlebar */
+:root:not(:-moz-lwtheme)[sizemode="normal"][tabsintitlebar] > body,
+/* Private browsing, not maximized, tabs in titlebar */
+:root:is([sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"],
+         [sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
+         [sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"][lwtheme-image]) > body
+{
+    width: calc(100% - calc(var(--aero-padding) * 2) - calc(var(--aero-border) * 2)) !important;
+    height: calc(100% - var(--aero-padding) - calc(var(--aero-border) * 2)) !important;
+    border: var(--aero-border) solid black !important;
+    outline: var(--aero-border) solid rgba(255, 255, 255, 0.7) !important;
+    outline-offset: calc(0px - (var(--aero-border) * 2)) !important;
+    outline-radius: 7px !important;
+    border-radius: 7px !important;
+    padding-left: var(--aero-padding) !important;
+    padding-right: var(--aero-padding) !important;
+    padding-bottom: var(--aero-padding) !important;
+    padding-top: 0px !important;
+
+    #browser,
+    #customization-container
+    {
+        border-image-slice: 2 2 2 2;
+        border-image-width: 2px 2px 2px 2px;
+        border-image-outset: 0px 0px 0px 0px;
+        border-image-repeat: repeat repeat;
+        border-image-source: url("../Assets/aero-inner-border-no-top.png");
+        border-style: solid;
+        border-width: 2px !important;
+        border-top: none !important;
+    }
+
+    #customization-container
+    {
+        background-color: transparent !important;
+    }
+
+    #customization-content-container,
+    #customization-footer
+    {
+        background-color: color-mix(in srgb, -moz-dialog 85%, white);
+    }
+}
+
+
+/* Aero Background Glow */
+:root:not(:-moz-lwtheme,:-moz-window-inactive)[sizemode="normal"][tabsintitlebar]
+{
+    background-image:
+        url("../Assets/sideglow_left.png"),
+        url("../Assets/sideglow_right.png"),
+        url("../Assets/sidebar.png"),
+        url("../Assets/sidebar.png")
+        !important;
+    background-repeat:
+        no-repeat,
+        no-repeat,
+        no-repeat,
+        no-repeat
+        !important;
+    background-position:
+        top 0px left 0px,
+        top 0px right 0px,
+        top 50px left 0px,
+        top 50px right 0px
+        !important;
+    background-size:
+        auto,
+        auto,
+        calc(var(--aero-padding) + 2px) 18vh,
+        calc(var(--aero-padding) + 2px) 18vh
+        !important;
+}
+:root:-moz-window-inactive:not(:-moz-lwtheme)[sizemode="normal"][tabsintitlebar]
+{
+    background-image:
+        url("../Assets/sidebar_unfocus.png"),
+        url("../Assets/sidebar_unfocus.png")
+        !important;
+    background-repeat:
+        no-repeat,
+        no-repeat
+        !important;
+    background-position:
+        top 50px left 0px,
+        top 50px right 0px
+        !important;
+    background-size:
+        calc(var(--aero-padding) + 2px) 18vh,
+        calc(var(--aero-padding) + 2px) 18vh
+        !important;
+}
+
+:root[tabsintitlebar][sizemode="normal"]
+{
+    #TabsToolbar
+    {
+        padding-block-start: var(--windowed-top-padding, 0px) !important;
+    }
+
+    #toolbar-menubar + #TabsToolbar
+    {
+        --windowed-top-padding: var(--aero-top-padding-windowed-menu);
+    }
+
+    #toolbar-menubar[inactive="true"] + #TabsToolbar
+    {
+        --windowed-top-padding: var(--aero-top-padding-windowed);
+    }
+
+    #nav-bar
+    {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+}
+
+:root[tabsintitlebar][sizemode="maximized"]
+{
+    #TabsToolbar
+    {
+        padding-block-start: var(--windowed-top-padding, 0px) !important;
+    }
+
+    #toolbar-menubar + #TabsToolbar
+    {
+        --windowed-top-padding: var(--aero-top-padding-maximized);
+    }
+
+    #toolbar-menubar[inactive="true"] + #TabsToolbar
+    {
+        --windowed-top-padding: var(--aero-top-padding-maximized);
+    }
+
+    #nav-bar
+    {
+        margin-left: 1px;
+        margin-right: 1px;
+    }
+}
+
+/* Menubar text */
+#main-menubar
+{
+    color: white !important;
+    text-shadow: black 0px 0px 8px !important;
+}
+
+
+.menubar-text
+{
+    font-size: var(--font-size-root) !important;
+}
+/* } */

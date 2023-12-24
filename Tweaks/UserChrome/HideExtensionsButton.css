@@ -1,0 +1,9 @@
+#navigator-toolbox:has(.tabbrowser-tab[label="New Tab"][selected]) #unified-extensions-button
+{
+    display: flex !important;
+}
+
+#unified-extensions-button
+{
+    display: none !important;
+}

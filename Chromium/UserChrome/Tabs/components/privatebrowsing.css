@@ -1,0 +1,34 @@
+:root[privatebrowsingmode="temporary"]
+{
+    --general-color: var(--purple) !important;
+}
+
+@media (prefers-color-scheme: dark)
+{
+    :root:is([privatebrowsingmode="temporary"],
+             [privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
+             [privatebrowsingmode="temporary"][lwtheme-image])
+    {
+        --lwt-header-image:                      none !important;
+        --lwt-additional-images:                 none !important;
+        --lwt-accent-color:                      #0d0c15 !important;
+        --lwt-selected-tab-background-color:     #070712 !important;
+        --toolbar-bgcolor:                       var(--lwt-selected-tab-background-color) !important;
+        --lwt-toolbarbutton-icon-fill-attention: var(--general-color) !important;
+    }
+}
+
+@media not (prefers-color-scheme: dark)
+{
+    :root:is([privatebrowsingmode="temporary"],
+             [privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
+             [privatebrowsingmode="temporary"][lwtheme-image])
+    {
+        --lwt-header-image:                      none !important;
+        --lwt-additional-images:                 none !important;
+        --lwt-accent-color:                      #e0dfec !important;
+        --lwt-selected-tab-background-color:     #f0eff6 !important;
+        --toolbar-bgcolor:                       var(--lwt-selected-tab-background-color) !important;
+        --lwt-toolbarbutton-icon-fill-attention: var(--general-color) !important;
+    }
+}

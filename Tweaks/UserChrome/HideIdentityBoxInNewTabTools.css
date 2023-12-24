@@ -1,0 +1,5 @@
+#identity-box:has(.identity-box-button > label[value="Extension (New Tab Tools)"])
+{
+    visibility: hidden !important;
+    width: 2px !important;
+}

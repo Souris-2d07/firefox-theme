@@ -1,0 +1,537 @@
+/* titlebar-buttonbox-container */
+#toolbar-menubar .titlebar-buttonbox-container
+{
+    position: absolute;
+    display: block !important;
+}
+
+:root:is([tabsintitlebar][sizemode="maximized"]) #toolbar-menubar .titlebar-buttonbox-container
+{
+    right: -6px; /*-2px;*/
+    top: 0px;
+}
+
+:root:is([tabsintitlebar][sizemode="normal"]) #toolbar-menubar .titlebar-buttonbox-container
+{
+    right: calc(var(--aero-padding) - 7px);
+    top: 1px;
+}
+
+/* Just hide this one */
+#TabsToolbar .titlebar-buttonbox-container
+{
+    display: none !important;
+}
+
+.titlebar-button .toolbarbutton-icon
+{
+    padding: 0px !important;
+}
+
+
+
+:root:is([tabsintitlebar])
+{
+    .titlebar-min                                 { list-style-image: none !important; }
+    .titlebar-min:hover                           { list-style-image: none !important; }
+    .titlebar-min:active                          { list-style-image: none !important; }
+    .titlebar-min:-moz-window-inactive            { list-style-image: none !important; }
+    .titlebar-min:-moz-window-inactive:hover      { list-style-image: none !important; }
+    .titlebar-min:-moz-window-inactive:active     { list-style-image: none !important; }
+
+    .titlebar-max                                 { list-style-image: none !important; }
+    .titlebar-max:hover                           { list-style-image: none !important; }
+    .titlebar-max:active                          { list-style-image: none !important; }
+    .titlebar-max:-moz-window-inactive            { list-style-image: none !important; }
+    .titlebar-max:-moz-window-inactive:hover      { list-style-image: none !important; }
+    .titlebar-max:-moz-window-inactive:active     { list-style-image: none !important; }
+
+    .titlebar-restore                             { list-style-image: none !important; }
+    .titlebar-restore:hover                       { list-style-image: none !important; }
+    .titlebar-restore:active                      { list-style-image: none !important; }
+    .titlebar-restore:-moz-window-inactive        { list-style-image: none !important; }
+    .titlebar-restore:-moz-window-inactive:hover  { list-style-image: none !important; }
+    .titlebar-restore:-moz-window-inactive:active { list-style-image: none !important; }
+
+    .titlebar-close                               { list-style-image: none !important; }
+    .titlebar-close:hover                         { list-style-image: none !important; }
+    .titlebar-close:active                        { list-style-image: none !important; }
+    .titlebar-close:-moz-window-inactive          { list-style-image: none !important; }
+    .titlebar-close:-moz-window-inactive:hover    { list-style-image: none !important; }
+    .titlebar-close:-moz-window-inactive:active   { list-style-image: none !important; }
+
+    .titlebar-min, .titlebar-max, .titlebar-restore, .titlebar-close
+    {
+        -moz-default-appearance: none !important;
+        padding: 0px !important;
+        transition: box-shadow .25s ease-out !important;
+    }
+
+    /* Blue button glow */
+    .titlebar-min:hover,
+    .titlebar-min:-moz-window-inactive:hover,
+    .titlebar-max:hover,
+    .titlebar-max:-moz-window-inactive:hover,
+    .titlebar-restore:hover,
+    .titlebar-restore:-moz-window-inactive:hover
+    {
+        transform: translateZ(40px) !important;
+        box-shadow: 0px 0px 10px aqua !important;
+    }
+
+    /* Red button glow */
+    .titlebar-close:hover,
+    .titlebar-close:-moz-window-inactive:hover
+    {
+        box-shadow: 0px 0px 8px #ff6666 !important;
+    }
+}
+
+
+:root:not(:-moz-lwtheme,:-moz-window-inactive),
+:root:is([privatebrowsingmode="temporary"][tabsintitlebar]):not(:-moz-window-inactive)
+{
+  .titlebar-min::before, .titlebar-min:hover::before         { --icon-titlebar-min:            url("../Assets/minimize.png"); }
+  .titlebar-min::after,  .titlebar-min:hover::after          { --icon-titlebar-min-hover:      url("../Assets/minimize-hover.png"); }
+  .titlebar-min:active                                       { --icon-titlebar-min-active:     url("../Assets/minimize-active.png"); }
+
+  .titlebar-max::before, .titlebar-max:hover::before         { --icon-titlebar-max:            url("../Assets/maximize.png"); }
+  .titlebar-max::after,  .titlebar-max:hover::after          { --icon-titlebar-max-hover:      url("../Assets/maximize-hover.png"); }
+  .titlebar-max:active                                       { --icon-titlebar-max-active:     url("../Assets/maximize-active.png"); }
+
+  .titlebar-restore::before, .titlebar-restore:hover::before { --icon-titlebar-restore:        url("../Assets/restore.png"); }
+  .titlebar-restore::after,  .titlebar-restore:hover::after  { --icon-titlebar-restore-hover:  url("../Assets/restore-hover.png"); }
+  .titlebar-restore:active                                   { --icon-titlebar-restore-active: url("../Assets/restore-active.png"); }
+
+  .titlebar-close::before, .titlebar-close:hover::before     { --icon-titlebar-close:          url("../Assets/close.png"); }
+  .titlebar-close::after,  .titlebar-close:hover::after      { --icon-titlebar-close-hover:    url("../Assets/close-hover.png"); }
+  .titlebar-close:active                                     { --icon-titlebar-close-active:   url("../Assets/close-active.png"); }
+}
+
+:root:-moz-window-inactive:not(:-moz-lwtheme),
+:root:-moz-window-inactive:is([privatebrowsingmode="temporary"][tabsintitlebar])
+{
+  .titlebar-min::before, .titlebar-min:hover::before         { --icon-titlebar-min:            url("../Assets/minimize-backdrop.png"); }
+  .titlebar-min::after,  .titlebar-min:hover::after          { --icon-titlebar-min-hover:      url("../Assets/minimize-hover-backdrop.png"); }
+  .titlebar-min:active                                       { --icon-titlebar-min-active:     url("../Assets/minimize-active-backdrop.png"); }
+
+  .titlebar-max::before, .titlebar-max:hover::before         { --icon-titlebar-max:            url("../Assets/maximize-backdrop.png"); }
+  .titlebar-max::after,  .titlebar-max:hover::after          { --icon-titlebar-max-hover:      url("../Assets/maximize-hover-backdrop.png"); }
+  .titlebar-max:active                                       { --icon-titlebar-max-active:     url("../Assets/maximize-active-backdrop.png"); }
+
+  .titlebar-restore::before, .titlebar-restore:hover::before { --icon-titlebar-restore:        url("../Assets/restore-backdrop.png"); }
+  .titlebar-restore::after,  .titlebar-restore:hover::after  { --icon-titlebar-restore-hover:  url("../Assets/restore-hover-backdrop.png"); }
+  .titlebar-restore:active                                   { --icon-titlebar-restore-active: url("../Assets/restore-active-backdrop.png"); }
+
+  .titlebar-close::before, .titlebar-close:hover::before     { --icon-titlebar-close:          url("../Assets/close-backdrop.png"); }
+  .titlebar-close::after,  .titlebar-close:hover::after      { --icon-titlebar-close-hover:    url("../Assets/close-hover-backdrop.png"); }
+  .titlebar-close:active                                     { --icon-titlebar-close-active:   url("../Assets/close-active-backdrop.png"); }
+}
+
+
+
+
+@keyframes fadeInFromNone {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOutFromNone {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titlebar-min,
+.titlebar-min:hover,
+.titlebar-min::before,
+.titlebar-min:hover::before,
+.titlebar-min::after,
+.titlebar-min:hover::after
+{
+    width: 29px;
+    height: 20px;
+}
+
+.titlebar-min,
+.titlebar-min:hover
+{
+  background: none;
+}
+
+.titlebar-min:active
+{
+  background: var(--icon-titlebar-min-active);
+}
+
+.titlebar-min:active::after,
+.titlebar-min:active::before
+{
+  content: none;
+  visibility: hidden;
+}
+
+
+
+
+.titlebar-min::before,
+.titlebar-min:hover::before
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-min);
+}
+
+.titlebar-min::after,
+.titlebar-min:hover::after
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-min-hover);
+}
+
+.titlebar-min::before,
+.titlebar-min:hover::after
+{
+  animation: fadeInFromNone 0.1s ease-out forwards;
+}
+
+.titlebar-min:hover::before,
+.titlebar-min::after
+{
+  animation: fadeOutFromNone 0.1s ease-in forwards;
+}
+
+.titlebar-min:active::before
+{
+  animation: fadeInFromNone 1s ease-out forwards;
+}
+
+.titlebar-min:active::after
+{
+  animation: fadeOutFromNone 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titlebar-max,
+.titlebar-max:hover,
+.titlebar-max::before,
+.titlebar-max:hover::before,
+.titlebar-max::after,
+.titlebar-max:hover::after
+{
+    width: 27px;
+    height: 20px;
+}
+
+.titlebar-max,
+.titlebar-max:hover
+{
+  background: none;
+}
+
+.titlebar-max:active
+{
+  background: var(--icon-titlebar-max-active);
+}
+
+.titlebar-max:active::after,
+.titlebar-max:active::before
+{
+  content: none;
+  visibility: hidden;
+}
+
+
+
+
+.titlebar-max::before,
+.titlebar-max:hover::before
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-max);
+}
+
+.titlebar-max::after,
+.titlebar-max:hover::after
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-max-hover);
+}
+
+.titlebar-max::before,
+.titlebar-max:hover::after
+{
+  animation: fadeInFromNone 0.1s ease-out forwards;
+}
+
+.titlebar-max:hover::before,
+.titlebar-max::after
+{
+  animation: fadeOutFromNone 0.1s ease-in forwards;
+}
+
+.titlebar-max:active::before
+{
+  animation: fadeInFromNone 1s ease-out forwards;
+}
+
+.titlebar-max:active::after
+{
+  animation: fadeOutFromNone 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titlebar-restore,
+.titlebar-restore:hover,
+.titlebar-restore::before,
+.titlebar-restore:hover::before,
+.titlebar-restore::after,
+.titlebar-restore:hover::after
+{
+    width: 27px;
+    height: 20px;
+}
+
+.titlebar-restore,
+.titlebar-restore:hover
+{
+  background: none;
+}
+
+.titlebar-restore:active
+{
+  background: var(--icon-titlebar-restore-active);
+}
+
+.titlebar-restore:active::after,
+.titlebar-restore:active::before
+{
+  content: none;
+  visibility: hidden;
+}
+
+
+
+
+.titlebar-restore::before,
+.titlebar-restore:hover::before
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-restore);
+}
+
+.titlebar-restore::after,
+.titlebar-restore:hover::after
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-restore-hover);
+}
+
+.titlebar-restore::before,
+.titlebar-restore:hover::after
+{
+  animation: fadeInFromNone 0.1s ease-out forwards;
+}
+
+.titlebar-restore:hover::before,
+.titlebar-restore::after
+{
+  animation: fadeOutFromNone 0.1s ease-in forwards;
+}
+
+.titlebar-restore:active::before
+{
+  animation: fadeInFromNone 1s ease-out forwards;
+}
+
+.titlebar-restore:active::after
+{
+  animation: fadeOutFromNone 1s ease-out forwards;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.titlebar-close,
+.titlebar-close:hover,
+.titlebar-close::before,
+.titlebar-close:hover::before,
+.titlebar-close::after,
+.titlebar-close:hover::after
+{
+    width: 49px;
+    height: 20px;
+}
+
+.titlebar-close,
+.titlebar-close:hover
+{
+  background: none;
+}
+
+.titlebar-close:active
+{
+  background: var(--icon-titlebar-close-active);
+}
+
+.titlebar-close:active::after,
+.titlebar-close:active::before
+{
+  content: none;
+  visibility: hidden;
+}
+
+
+
+
+.titlebar-close::before,
+.titlebar-close:hover::before
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-close);
+}
+
+.titlebar-close::after,
+.titlebar-close:hover::after
+{
+    position: fixed;
+    content: "";
+    background: var(--icon-titlebar-close-hover);
+}
+
+/* Fade Out */
+.titlebar-close::before,
+.titlebar-close:hover::after
+{
+  animation: fadeInFromNone 0.1s ease-out forwards;
+}
+
+.titlebar-close::after,
+.titlebar-close:hover::before
+{
+  animation: fadeOutFromNone 0.1s ease-in forwards;
+}
+
+.titlebar-close:active::before
+{
+  animation: fadeInFromNone 1s ease-out forwards;
+}
+
+.titlebar-close:active::after
+{
+  animation: fadeOutFromNone 1s ease-out forwards;
+}
+
+
+

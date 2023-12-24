@@ -1,0 +1,25 @@
+#back-button
+{
+    list-style-image: url("../Icons/back.png") !important;
+}
+
+#forward-button
+{
+    list-style-image: url("../Icons/forward.png") !important;
+}
+
+#reload-button
+{
+    list-style-image: url("../Icons/reload.png") !important;
+}
+
+#stop-button
+{
+    list-style-image: url("../Icons/stop.png") !important;
+}
+
+.bookmark-item[container],
+.downloadIconShow > .button-box > .button-icon
+{
+	list-style-image: url("../Icons/Folder.png") !important;
+}

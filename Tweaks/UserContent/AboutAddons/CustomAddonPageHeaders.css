@@ -1,0 +1,29 @@
+@-moz-document url-prefix("about:addons")
+{
+    #page-header:is(
+        [type="discover"],
+        [type="extension"],
+        [type="theme"],
+        [type="plugin"],
+        [type="updates"])
+    {
+        .header-name
+        {
+            font-weight: 700 !important;
+            visibility: hidden !important;
+            line-height: 0 !important;
+        }
+
+        .header-name::after
+        {
+            visibility: visible !important;
+            display: block !important;
+        }
+    }
+
+    #page-header:is([type="discover"])  { .header-name::after { content: "Recommendations" !important; } }
+    #page-header:is([type="extension"]) { .header-name::after { content: "Extensions"      !important; } }
+    #page-header:is([type="theme"])     { .header-name::after { content: "Themes"          !important; } }
+    #page-header:is([type="plugin"])    { .header-name::after { content: "Plugins"         !important; } }
+    #page-header:is([type="updates"])   { .header-name::after { content: "Updates"         !important; } }
+}

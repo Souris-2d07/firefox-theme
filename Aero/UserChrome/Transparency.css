@@ -1,0 +1,17 @@
+:root:not(:-moz-lwtheme):is([tabsintitlebar]),
+:root:is([privatebrowsingmode="temporary"][tabsintitlebar])
+{
+    background-color: transparent !important;
+
+    #navigator-toolbox
+    {
+        background-color: transparent !important;
+        background-image: none !important;
+    }
+
+    #navigator-toolbox-background
+    {
+        appearance: none !important;
+        background-image: none !important;
+    }
+}

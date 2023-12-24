@@ -1,0 +1,8 @@
+@-moz-document url("about:newtab")
+{
+/*     .tabbrowser-tab[label="New Tab"][image="chrome://branding/content/icon32.png"] */
+    .tabbrowser-tab .tab-content .tab-icon-image
+    {
+        display: none !important;
+    }
+}

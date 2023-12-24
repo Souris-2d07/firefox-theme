@@ -1,0 +1,108 @@
+@layer Dark, Light, PrivateBrowsing, GoogleChrome, Aero, final;
+
+/* Tab Base */
+@import url("Chromium/UserChrome/Tabs/userChrome.css");
+
+/* Aero */
+@import url("Aero/UserChrome/Aero.css") layer(Aero) (-moz-bool-pref: "userChromes.ChromiumFX.Aero");
+
+/* Chromium */
+@import url("Chromium/UserChrome/Icons.css");
+@import url("Chromium/UserChrome/TabCloseButton.css");
+@import url("Chromium/UserChrome/PreTabs.css");
+@import url("Chromium/UserChrome/BookmarksBar.css");
+@import url("Chromium/UserChrome/ApplicationMenu.css");
+@import url("Chromium/UserChrome/AboutFirefox.css");
+@import url("Chromium/UserChrome/IncognitoIcon.css");
+@import url("Chromium/UserChrome/UrlBar.css");
+
+/* Tweaks */
+@import url("Tweaks/UserChrome/HideAllTabsButton.css");
+@import url("Tweaks/UserChrome/HideExtensionsButton.css");
+@import url("Tweaks/UserChrome/HideIdentityBoxInNewTabTools.css");
+@import url("Tweaks/UserChrome/HideSidebarHeader.css");
+@import url("Tweaks/UserChrome/ReorderUrlbarFlexItems.css");
+
+
+.tab-label-container
+{
+    margin-inline-start: 8px !important;
+}
+
+.tab-content
+{
+    padding-left: 12px !important;
+    padding-right: 8px !important;
+}
+
+
+.tab-icon-stack
+{
+    height: 24px !important;
+}
+
+.tab-icon-image
+{
+    margin-top: auto !important;
+    margin-bottom: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+}
+
+
+/* Extra Aero fixed (todo) */
+
+@media (-moz-bool-pref: "userChromes.ChromiumFX.Aero")
+{
+:root[sizemode="normal"] #nav-bar
+{
+    border-image-slice: 2 2 2 2 !important;
+    border-image-width: 2px 2px 0px 2px !important;
+    /* border outset should really be all 0 but it fixes the way it looks currently */
+    border-image-outset: 2px 1px 0px 1px !important;
+    border-image-repeat: repeat repeat !important;
+    border-image-source: url("Aero/Assets/aero-inner-border-chrome-grey-bottom.png") !important;
+
+    /* We don't need the negative margin anymore, but keep anyway */
+    margin-top: 0px !important;
+}
+
+:root[sizemode="maximized"] #nav-bar
+{
+    border-image-slice: 2 2 2 2 !important;
+    border-image-width: 2px 0px 0px 0px !important;
+    border-image-outset: 2px 0px 0px 0px !important;
+    border-image-repeat: repeat repeat !important;
+    border-image-source: url("Aero/Assets/aero-inner-border-chrome-grey-bottom.png") !important;
+
+    /* We don't need the negative margin anymore, but keep anyway */
+    margin-top: 0px !important;
+}
+
+:root[sizemode="normal"] #PersonalToolbar
+{
+    border-image-slice: 2 2 2 2 !important;
+    border-image-width: 0px 2px 0px 2px !important;
+    border-image-outset: 0px 2px 0px 2px !important;
+    border-image-repeat: repeat repeat !important;
+    border-image-source: url("Aero/Assets/aero-inner-border-no-bottom.png") !important;
+    margin-left: 2px !important;
+    margin-right: 2px !important;
+}
+
+:root[BookmarksToolbarOverlapsBrowser] .newTabBrowserPanel,
+:root[BookmarksToolbarOverlapsBrowser] #sidebar-box
+{
+  padding-top: 0px !important;
+  margin-top: 0px !important;
+}
+
+/* @-moz-document url("about:newtab"), */
+/*                url("moz-extension://8be41641-3e92-4874-9516-a42c0cf7cf98/newTab.xhtml") */
+#navigator-toolbox:has(.tabbrowser-tab[label="New Tab"][selected]) + #browser
+{
+    margin-top: 28px !important;
+}
+
+}
+

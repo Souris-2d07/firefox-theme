@@ -1,0 +1,12 @@
+@supports -moz-bool-pref("userChrome.Linux.AeroButtons.Enabled")
+{
+  #TabsToolbar :is(#tabs-newtab-button, #new-tab-button)
+  {
+      background-color: black !important;
+      opacity: 0.2 !important;
+      color: white !important;
+      width: 22px !important;
+      height: 20px !important;
+      bottom: 12px !important;
+  }
+}

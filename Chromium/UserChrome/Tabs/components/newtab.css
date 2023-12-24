@@ -1,0 +1,29 @@
+ 
+
+#TabsToolbar #tabs-newtab-button image:not(.menu-iconic-icon), #TabsToolbar #new-tab-button image:not(.menu-iconic-icon){
+border-radius: 2px !important;
+}
+
+
+#tabs-newtab-button{
+padding-inline-start: calc(var(--tab-height-personal) - 31px + var(--uc-margin-left-newtab)) !important;
+}
+
+#tabs-newtab-button, #TabsToolbar #new-tab-button {
+    padding-block-start: calc(var(--margin-top-personal)) !important;
+    fill: var(--general-color) !important;
+}
+
+#TabsToolbar #tabs-newtab-button image:not(.menu-iconic-icon), #TabsToolbar #new-tab-button image:not(.menu-iconic-icon) {
+    padding-block-start: calc(var(--margin-top-personal)) !important;
+    padding: 3px !important;
+    max-height: 22px !important;
+    min-height: 22px !important;
+    max-width: 22px !important;
+    min-width: 22px !important;
+    border-radius: 2px !important;
+}
+
+#tabs-newtab-button:hover .toolbarbutton-icon, #TabsToolbar #new-tab-button:hover .toolbarbutton-icon {
+    background: color-mix(in srgb, var(--general-color) 25%, transparent) !important;
+}

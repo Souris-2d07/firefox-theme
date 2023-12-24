@@ -1,0 +1,130 @@
+@-moz-document url-prefix("about:addons")
+{
+    :root
+    {
+        --in-content-font-body-size-base: 9pt !important;
+        --addon-icon-size: 24px !important;
+        --main-margin-start: 0px !important;
+        --card-padding: 0px !important;
+
+        --in-content-sidebar-width: 200px !important;
+        --section-width: calc(100% - var(--in-content-sidebar-width)) !important;
+    }
+
+    .addon-name
+    {
+        font-size: var(--in-content-font-body-size-base) !important;
+    }
+
+    .addon-description
+    {
+        font-size: var(--in-content-font-body-size-base) !important;
+    }
+
+    .more-options-button
+    {
+        width: 16px !important;
+        height: 16px !important;
+    }
+
+    .category[name="discover"],
+    .category[name="extension"],
+    .category[name="theme"],
+    .category[name="plugin"],
+    .category[name="dictionary"],
+    .category[name="locale"],
+    .category[name="sitepermission"],
+    .category[name="available-updates"],
+    .category[name="recent-updates"]
+    {
+        background-image: none !important;
+    }
+
+    .category-name
+    {
+        font-size: var(--in-content-font-body-size-base) !important;
+        padding-inline-start: initial !important;
+    }
+
+    #categories > .category
+    {
+        min-height: 32px !important;
+        margin-inline-start: 0 !important;
+        padding-inline: 18px !important;
+    }
+
+    #categories > .category
+    {
+        border-left: 6px solid white !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+
+    #categories > .category[selected],
+    #categories > .category.selected
+    {
+        border-left: 6px solid #666 !important;
+        background-color: transparent !important;
+/*         color: var(--in-content-accent-color); */
+    }
+
+    #categories > .category > .category-name
+    {
+        color: #555 !important;
+/*         font-weight: bold !important; */
+    }
+
+    #categories > .category[selected] > .category-name
+/*     #categories > .category.selected > .category-name */
+    {
+        color: black !important;
+/*         font-weight: bold !important; */
+    }
+
+
+
+    #categories > .category:hover > .category-name
+    {
+/*         background-color: red !important; */
+/*         color: var(--in-content-accent-color); */
+    }
+
+
+
+
+
+    .sidebar-footer-list
+    {
+        margin-inline: 0 !important;
+        margin-block: 0 !important;
+    }
+
+    .sidebar-footer-link
+    {
+        height: 32px !important;
+    }
+
+    .sidebar-footer-icon
+    {
+        display: none !important;
+    }
+
+    .sidebar-footer-label
+    {
+        margin: 0 !important;
+        margin-left: 24px !important;
+    }
+
+
+    #categories
+    {
+        padding-inline-end: 0 !important;
+        margin: 64px 0 0 !important;
+        padding: 0 !important;
+    }
+
+    #main
+    {
+        max-width: 100% !important;
+    }
+}

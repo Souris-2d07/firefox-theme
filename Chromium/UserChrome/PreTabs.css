@@ -1,0 +1,20 @@
+.titlebar-spacer[type="pre-tabs"]
+{
+    display: initial !important;
+}
+
+:root:is([sizemode="normal"])
+{
+    .titlebar-spacer[type="pre-tabs"]
+    {
+        width: 20px !important;
+    }
+}
+
+:root:is([tabsintitlebar][sizemode="maximized"])
+{
+    .titlebar-spacer[type="pre-tabs"]
+    {
+        width: 6px !important;
+    }
+}

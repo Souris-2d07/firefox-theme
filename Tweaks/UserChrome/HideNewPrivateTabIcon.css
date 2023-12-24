@@ -1,0 +1,4 @@
+.tabbrowser-tab[label="New Private Tab"][image="chrome://browser/skin/privatebrowsing/favicon.svg"] .tab-content .tab-icon-image
+{
+    display: none !important;
+}

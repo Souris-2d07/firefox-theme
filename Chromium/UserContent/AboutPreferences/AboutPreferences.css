@@ -1,0 +1,62 @@
+@-moz-document url-prefix("about:preferences")
+{
+    :root
+    {
+        --in-content-font-body-size-base: 9pt !important
+    }
+
+    .category-name
+    {
+        font-size: var(--in-content-font-body-size-base) !important;
+        padding-inline-start: initial !important;
+    }
+
+    #categories > .category
+    {
+        min-height: 32px !important;
+        margin-inline-start: 0 !important;
+        padding-inline: 18px !important;
+    }
+
+    .category[selected] > .category-icon,
+    .category.selected > .category-icon
+    {
+/*         fill-opacity: 1; */
+    }
+
+    #categories > .category
+    {
+        border-left: 6px solid white !important;
+        background-color: transparent !important;
+        border-radius: 0 !important;
+    }
+
+    #categories > .category[selected],
+    #categories > .category.selected
+    {
+        border-left: 6px solid #666 !important;
+        background-color: transparent !important;
+/*         color: var(--in-content-accent-color); */
+    }
+
+    #categories > .category > .category-name
+    {
+        color: #555 !important;
+/*         font-weight: bold !important; */
+    }
+
+    #categories > .category[selected] > .category-name
+/*     #categories > .category.selected > .category-name */
+    {
+        color: black !important;
+/*         font-weight: bold !important; */
+    }
+
+
+
+    #categories > .category:hover > .category-name
+    {
+/*         background-color: red !important; */
+/*         color: var(--in-content-accent-color); */
+    }
+}

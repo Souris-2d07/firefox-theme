@@ -1,0 +1,19 @@
+:root[privatebrowsingmode="temporary"]
+{
+    .titlebar-spacer[type="pre-tabs"]
+    {
+        width: 0px !important;
+    }
+
+    #private-browsing-indicator-with-label
+    {
+        order: -1 !important;
+    }
+
+    .private-browsing-indicator-icon
+    {
+        list-style-image: url("../Icons/otr_icon.png") !important;
+        width: initial !important;
+        height: initial !important;
+    }
+}

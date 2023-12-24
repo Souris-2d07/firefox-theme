@@ -1,0 +1,6 @@
+/* Hides the context line above the tab */
+
+.tab-context-line
+{
+    background-color: transparent !important;
+}

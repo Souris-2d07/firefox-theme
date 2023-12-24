@@ -1,0 +1,11 @@
+#PersonalToolbar
+{
+    background-image: linear-gradient(#f4f4f4,#f1f1f1) !important;
+    height: 38px !important;
+    padding-inline: 8px !important;
+}
+
+#personal-bookmarks
+{
+    align-self: center !important;
+}

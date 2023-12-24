@@ -1,0 +1,17 @@
+@-moz-document url-prefix("about:preferences")
+{
+    :is(
+        #category-general,
+        #category-home,
+        #category-search,
+        #category-containers,
+        #category-privacy,
+        #category-sync,
+        #category-experimental,
+        #category-more-from-mozilla
+    ) .category-icon
+    {
+        list-style-image: none !important;
+        display: none !important;
+    }
+}

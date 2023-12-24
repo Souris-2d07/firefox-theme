@@ -1,0 +1,7 @@
+@-moz-document url-prefix("about:addons")
+{
+    .category:is([name="discover"])
+    {
+        display: none !important;
+    }
+}

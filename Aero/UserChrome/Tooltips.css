@@ -1,0 +1,14 @@
+tooltip
+{
+    -moz-appearance: none !important;
+
+    color: #333333 !important; /*textcolor*/
+    background: linear-gradient(#ffffff,#eeeeff) !important;
+
+    border: #777 solid 1px !important;
+    border-radius: 3px !important;
+
+    padding: 6px !important;
+    opacity: 1 !important;
+}
+

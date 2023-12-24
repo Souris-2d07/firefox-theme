@@ -1,0 +1,52 @@
+@media (prefers-color-scheme: dark)
+{
+    :root:is([brighttext]):-moz-lwtheme,
+    :root[lwt-toolbar-field-focus-brighttext],
+    :root:-moz-lwtheme
+    {
+        --contrast-color: #000000 !important;
+        --lwt-frame: var(--lwt-accent-color, #09080d) !important;                             /*"frame": "#17161c" */
+        --lwt-accent-color-inactive: var(--lwt-accent-color, Field) !important;               /*"frame_inactive": "#17161c" */
+        --lwt-tab-text: #ffffff !important;                                                   /*"tab_text": "#ffffff"*/
+        --toolbar-bgcolor: var(--lwt-selected-tab-background-color) !important;               /*"toolbar":"#131118", "Color de la toolbar"*/
+        --panel-description-color: var(--general-color) !important;                           /*"Color de letras de: correo de la cuenta, y dispositivos conectados"*/
+        --toolbar-field-color: var(--lwt-tab-text) !important;                                /*"toolbar_field_text":"#e2e9e9"*/
+        --toolbar-field-focus-color: var(--lwt-tab-text) !important;                          /*"toolbar_field_text_focus": "#e5e5e6"*/
+        --toolbar-field-focus-border-color: transparent !important;                           /*"toolbar_field_border_focus": "#005F66"*/
+        --lwt-toolbar-field-highlight: var(--general-color) !important;                       /*"toolbar_field_highlight": "#006f80"*/
+        --lwt-toolbar-field-highlight-text: var(--contrast-color) !important;                 /*"toolbar_field_highlight_text": "#eaeaea"*/
+        --chrome-content-separator-color: var(--toolbar-bgcolor) !important;                  /*"toolbar_bottom_separator": "#181818"*/
+        --lwt-sidebar-background-color: var(--toolbar-bgcolor) !important;                    /*Sidebar-background*/
+        --toolbarbutton-inner-padding: 6px !important;                                        /*Toolbar buttons más pequeños*/
+        --toolbarbutton-outer-padding: 2px !important;                                        /*Toolbar buttons más espaciados*/
+        --toolbarbutton-border-radius: 2px !important;                                        /*forma de los buttons*/
+        --tab-block-margin: 0px !important;                                                   /*margenes pestañas - change this will break the theme*/
+        --margin-top-personal: 0px !important;                                                /*margen top pestañas - variable personal*/
+        --tab-min-height: var(--tab-height-personal) !important;                              /*tamaño pestañas*/
+        --tabs-shadow-size: 0px !important;                                                   /*sombras de pestaña*/
+        --tab-border-radius: 2px 2px 0 0 !important;                                          /*forma de la pestaña*/
+        --arrowpanel-menuitem-padding: 8px !important;                                        /*menu mas pequeño*/
+        --arrowpanel-border-radius: 0px !important;                                           /*forma de los menús*/
+        --panel-subview-body-padding: 4px 0px !important;                                     /*Padding menús*/
+        --arrowpanel-padding: 1.3em !important;                                               /*Otro padding de menús*/
+        --arrowpanel-menuitem-margin: 0 0px !important;                                       /*margenes de menús*/
+        --menu-panel-width-wide: 32em !important;
+        --arrowpanel-menuitem-border-radius: 0px !important;                                  /*forma de menuitems :hover*/
+        --panel-separator-margin-vertical: 3px !important;                                    /*margen vertical entre los separadores*/
+        --panel-separator-margin-horizontal: 8px !important;                                  /*Margen horizontal de los separadores*/
+        --panel-separator-margin: var(--panel-separator-margin-vertical) var(--panel-separator-margin-horizontal) !important;
+        --urlbar-icon-padding: 4px !important;                                                /*padding de los iconos de la urlbar*/
+        --panel-separator-color: var(--general-color) !important;                             /*separadores de menu desplegable de marcadores*/
+        --urlbar-popup-url-color: var(--general-color) !important;                            /*Color urls de sujerencias de búsqueda*/
+        --autocomplete-popup-hover-background: var(--button-bgcolor) !important;              /*Color hover de sujerencias de búsqueda*/
+        --autocomplete-popup-separator-color: transparent !important;                         /*color separador urlbar y sugerencias de búsqueda*/
+        --button-primary-bgcolor: var(--button-hover-bgcolor) !important;                     /*ColorBotónGuardar*/
+        --button-primary-color: #eaeaea !important;                                           /*ColorLetrasBotónGuardar*/
+    }
+
+    :root
+    {
+        --general-color: var(--lwt-toolbarbutton-icon-fill-attention, var(--gray));
+        --brightness-wallpaper: brightness(51%);
+    }
+}

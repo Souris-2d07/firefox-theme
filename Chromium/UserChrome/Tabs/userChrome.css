@@ -1,0 +1,85 @@
+@import url('components/light.css')
+    layer(Light);
+
+@import url('components/dark.css')
+    layer(Dark);
+
+@import url('components/privatebrowsing.css')
+    layer(PrivateBrowsing);
+
+@import url('components/ogx_root-personal.css');
+
+@import url('components/ogx_tabs-bar.css');
+@import url('components/ogx_tab-shapes.css');
+
+@import url("components/newtab.css");
+/* @import url("components/pinned-tabs.css"); */
+/* @import url("components/imagetheme.css"); */
+@import url("components/fixups.css");
+
+
+@media (-moz-gtk-csd-available)
+{
+    :root:not(:-moz-lwtheme)
+    {
+        #nav-bar
+        {
+            --navbar-gradient: linear-gradient(#f4f4f4,#dddddd);
+            background-image: var(--navbar-gradient) !important;
+        }
+
+        .tabbrowser-tab
+        {
+            --uc-tab-shadow-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .tabbrowser-tab .tab-background
+        {
+            --tab-inactive-gradient: linear-gradient(#ccc,#ccc);
+            --tab-active-gradient: linear-gradient(#ffffff,#e9e9e9);
+            --tab-hover-gradient: linear-gradient(#ffffff,#ffffff);
+            --tab-multiselect-gradient: linear-gradient(rgb(200, 200, 255),#ffffff);
+
+            background-clip: content-box;
+        }
+
+        .tabbrowser-tab .tab-background,
+        .tabbrowser-tab .tab-background::before,
+        .tabbrowser-tab .tab-background::after
+        {
+            background-image: var(--tab-inactive-gradient) !important;
+        }
+
+        /* Tab Current Active Tab */
+        .tabbrowser-tab[visuallyselected] .tab-background,
+        .tabbrowser-tab[visuallyselected] .tab-background::before,
+        .tabbrowser-tab[visuallyselected] .tab-background::after
+        {
+            background-image: var(--tab-active-gradient) !important;
+        }
+
+        /* Tab Multi Selected */
+        .tabbrowser-tab:is([multiselected]):not([visuallyselected]) .tab-background,
+        .tabbrowser-tab:is([multiselected]):not([visuallyselected]) .tab-background::before,
+        .tabbrowser-tab:is([multiselected]):not([visuallyselected]) .tab-background::after
+        {
+            background-image: var(--tab-multiselect-gradient) !important;
+        }
+
+        /* Tab Hovered Background Color (Center) */
+        .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-background,
+        .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-background::before,
+        .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-background::after
+        {
+            background-image: var(--tab-hover-gradient) !important;
+        }
+    }
+}
+
+@layer Chromium
+{
+    .tab-close-button
+    {
+        margin-right: 2px !important;
+    }
+}

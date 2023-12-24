@@ -1,0 +1,115 @@
+#tabbrowser-tabs
+{
+    --lwt-tab-line-color: transparent !important;
+    --tab-loading-fill: var(--identity-tab-color, var(--general-color)) !important;
+    --uc-tabs-scrollbutton-border: 0px !important;
+}
+
+/* ---------------------Pestaña activa------------------------ */
+
+.tab-stack, .tab-background
+{
+    clip-path: polygon(5px 0%, 200% 0%, 0% 200%, 0% 5px);
+    border-radius: var(--tab-border-radius) !important;
+}
+
+.tab-stack
+{
+    margin-top: var(--margin-top-personal) !important;
+}
+
+.tabbrowser-tab[selected="true"] .tab-stack
+{
+    background: var(--gradient) !important;
+    z-index: 2 !important;
+}
+
+.tab-background
+{
+    height: var(--tab-height-personal) !important;
+    margin-left: 1px !important;
+    margin-right: 1px !important;
+    margin-top: 1px !important;
+}
+
+/* Borde entre pestañas */
+
+.tabbrowser-tab
+{
+    padding-left: 0px !important;
+    padding-right: 2px !important;
+}
+
+/* Indispensable para mantener alineado el contenido de las pestañas */
+
+.tab-content
+{
+    height: var(--tab-height-personal) !important;
+    margin-left: -1px !important;
+}
+
+
+
+/* Color :hover de las pestañas no seleccionadas */
+
+.tabbrowser-tab:not([selected="true"], [multiselected]):hover > .tab-stack > .tab-background:not([selected="true"], [multiselected])
+{
+    background-color: transparent !important;
+}
+
+.tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-stack
+{
+    background-color: color-mix(in srgb, var(--identity-icon-color, var(--general-color)) 25%, transparent) !important;
+    z-index: 2 !important;
+}
+
+:root[lwtheme-image] .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-stack
+{
+    background-color: color-mix(in srgb, var(--identity-icon-color, var(--general-color)) 25%, transparent) !important;
+}
+
+:root[style*="--lwt-additional-images"] .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-stack
+{
+    background-color: color-mix(in srgb, var(--identity-icon-color, var(--general-color)) 25%, transparent) !important;
+}
+
+/* Don't draw extra border at top of toolbar */
+#navigator-toolbox
+{
+    --lwt-tabs-border-color: transparent !important;
+}
+
+#nav-bar
+{
+    border-image: var(--panel-separator-zap-gradient2) 1 !important;
+    margin-top: -1px !important;
+    padding-top: 1px !important;
+    border-top: 1px solid var(--toolbar-bgcolor) !important;
+    padding-bottom: 1px !important;
+}
+
+toolbar:is(#TabsToolbar) toolbarbutton:not(#tabs-newtab-button, #new-tab-button, .titlebar-button)
+{
+    padding-block-start: calc(var(--margin-top-personal)) !important;
+}
+
+
+/* Maximum width of tab */
+.tabbrowser-tab[fadein]:not([style^="max-width"])
+{
+    max-width: 200px !important;
+}
+
+/* Code to tabs-bar reach lower height that 30px */
+
+#titlebar
+{
+    appearance: none !important;
+}
+
+.titlebar-buttonbox-container, .tab-close-button, .tab-label-container
+{
+    max-height: var(--tab-height-personal) !important;
+}
+
+

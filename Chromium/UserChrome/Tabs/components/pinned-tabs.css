@@ -1,0 +1,21 @@
+ 
+/* Pinned */
+
+.tabbrowser-tab:is([pinned]) .tab-context-line{
+    height: 2px ;
+    margin-bottom: 3px ;
+    -moz-box-ordinal-group: 2 ;
+}
+tab:is([pinned])[selected] .tab-context-line { margin-inline: 0px  !important;
+    max-width: -moz-available  !important;
+    transition-duration: 150ms ;
+}
+tab:is([pinned]):not([selected]) .tab-context-line { margin-inline: 0px  !important;
+    max-width: -moz-available  !important;
+    transition-duration: 0ms ;
+}
+
+.tab-content:is([pinned])
+{
+    margin-left: 0px !important;
+}

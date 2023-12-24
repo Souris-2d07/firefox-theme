@@ -1,0 +1,21 @@
+@-moz-document url("about:newtab")
+{
+    /* Variables */
+    body
+    {
+        --newtab-background-color: #fbfbfb !important;
+    }
+
+    /* Tiles */
+    .top-site-outer .tile
+    {
+        border-radius: 2px !important;
+    }
+
+    /* Placeholder Tiles */
+    .top-site-outer.placeholder .tile
+    {
+        box-shadow: 0 0 0 0px var(--newtab-inner-box-shadow-color) !important;
+        background-color: #eee !important;
+    }
+}

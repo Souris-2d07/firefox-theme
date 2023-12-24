@@ -1,0 +1,39 @@
+/*
+ * html:div #aboutDialogContainer
+ *   hbox #clientBox
+ *     vbox #leftBox
+ *     vbox #rightBox
+ *       label #release
+ *   vbox #bottomBox
+ *     hbox[pack="center"]
+ *       label .bottom-link
+ *       label .bottom-link
+ *       label .bottom-link
+ *     description #trademark
+ */
+
+@-moz-document url("chrome://browser/content/aboutDialog.xhtml")
+{
+    #clientBox, #bottomBox
+    {
+        color: Black !important;
+        background-color: white !important;
+    }
+
+    .text-link
+    {
+        color: blue !important;
+    }
+
+    #leftBox
+    {
+        background-size: 100% auto !important;
+        min-width: 1px !important;
+        min-height: 1px !important;
+    }
+
+    #rightBox
+    {
+        flex-grow: 1 !important;
+    }
+}

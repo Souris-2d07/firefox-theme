@@ -1,0 +1,58 @@
+/* Compatibilidad Parcial para temas que usan "Imagenes" */
+
+@media (prefers-color-scheme: dark)
+{
+    :root[style*="--lwt-additional-images"],
+    :root[lwtheme-image]
+    {
+        --toolbar-bgcolor: #101019cf !important;                                                                       /*"toolbar":"#131118", "Color de la toolbar"*/
+        --lwt-selected-tab-background-color: transparent !important;                                                   /*"tab_selected":"#363540"*/
+        --lwt-background-alignment: right top, left top, right top !important;
+    }
+}
+
+@media not (prefers-color-scheme: dark)
+{
+    :root[style*="--lwt-additional-images"],
+    :root[lwtheme-image]
+    {
+        --toolbar-bgcolor:                      #f9f9f9cf !important;                                    /*"toolbar":"#131118", "Color de la toolbar"*/
+        --lwt-selected-tab-background-color:    transparent !important;                                  /*"tab_selected":"#363540"*/
+        --lwt-background-alignment: right top, left top, right top !important;
+    }
+}
+
+
+
+/* Image Theme (e.g. Firefox Alpenglow) */
+:root:is([lwtheme-image],[style*="--lwt-additional-images"]) .tabbrowser-tab:not([selected="true"], [multiselected]):hover .tab-stack
+{
+    background-color: transparent  !important;
+}
+
+/* ----------------------------------- config to themes that have "IMAGES" --------------------------------------------
+   ------------------------------------------ Compatibilidad parcial -------------------------------------------------- */
+
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[multiselected="false"],
+:root[style*="--lwt-additional-images"] #tabbrowser-tabs:not([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]
+{
+    --lwt-background-alignment: right top, right top, right top !important;
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+        linear-gradient(transparent, transparent), var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+    background-position: right top !important;
+    background-repeat: repeat-x !important;
+    background-size: auto auto !important;
+}
+
+/* Mantener una imagen al mover pestaña en temas con imagenes - still needs fix */
+
+:root:is([lwtheme-image], [style*="--lwt-additional-images"]) #tabbrowser-tabs:is([movingtab]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab > .tab-stack > .tab-background[selected="true"]{
+    background-image: linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+                      linear-gradient(var(--toolbar-bgcolor, transparent), var(--toolbar-bgcolor, transparent)),
+                      var(--lwt-header-image, var(--lwt-additional-images, none)) !important;
+    background-position: left center !important;
+    background-repeat: no-repeat !important;
+    background-size: auto auto !important;
+}
+
+

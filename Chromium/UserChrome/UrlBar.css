@@ -1,0 +1,38 @@
+#nav-bar
+{
+    height: 38px !important;
+}
+
+#urlbar-container
+{
+    --urlbar-container-height: 28px !important;
+}
+
+/*#urlbar-background
+{
+    height: 24px !important;
+}*/
+
+#urlbar[breakout]
+{
+    height: 26px !important;
+}
+
+/*#nav-bar
+    #nav-bar-customization-target
+        #urlbar-container
+            #urlbar
+                #urlbar-background
+                #urlbar-input-container
+                    .urlbar-input-box
+                        #urlbar-input
+                        */
+#urlbar
+{
+    --urlbar-min-height: 26px !important;
+}
+
+#urlbar, #searchbar
+{
+    font-size: 1em !important;
+}

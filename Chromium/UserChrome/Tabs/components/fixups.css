@@ -1,0 +1,45 @@
+/* Removes ugly weird outline around current tab when multiselecting */
+.tab-background[multiselected="true"]
+{
+    outline: none !important;
+}
+
+.tab-icon-image[src="chrome://branding/content/icon32.png"] {
+    content: url("../images/foxlogofavicon.svg");
+    fill: var(--identity-icon-color, var(--general-color)) !important;
+}
+
+/* Quitar label "Navegación Privada" */
+
+#private-browsing-indicator-with-label > label {
+    display: none !important;
+}
+
+
+#scrollbutton-up,
+#scrollbutton-down
+{
+    border-block-width: var(--uc-tabs-scrollbutton-border, 0px) !important;
+}
+
+
+/* Reduce spacing between pinned and regular tabs */
+
+#tabbrowser-tabs[haspinnedtabs]:not([positionpinnedtabs]) > #tabbrowser-arrowscrollbox > .tabbrowser-tab:nth-child(1 of :not([pinned], [hidden])) {
+    margin-inline-start: 0px !important;
+}
+
+
+#TabsToolbar #firefox-view-button[open] > .toolbarbutton-icon,
+#tabbrowser-tabs:not([noshadowfortests]) .tab-background:is([selected], [multiselected]) {
+    box-shadow: none !important;
+}
+
+
+
+/* Color y posición "dot" de pestaña que necesita atención */
+
+.tabbrowser-tab > .tab-stack > .tab-content[pinned][titlechanged]:not([selected="true"]) {
+    background-image: radial-gradient(circle, var(--general-color), var(--general-color) 2px, transparent 2px) !important;
+    background-position: center top calc(0px + var(--tabs-navbar-shadow-size)) !important;
+}

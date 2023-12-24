@@ -1,0 +1,95 @@
+@media (-moz-platform: windows),
+       (-moz-platform: linux),
+       (-moz-platform: macos)
+{
+
+:root
+{
+    @supports -moz-bool-pref("userChrome.Tabs.Option10.Enabled")
+    {
+        --left-svg:   url("../../WaveFox-Additions/Chrome/tab-shape/left_corners.svg");
+        --center-svg: url("../../WaveFox-Additions/Chrome/tab-shape/center.svg");
+        --right-svg:  url("../../WaveFox-Additions/Chrome/tab-shape/right_corners.svg");
+
+        --tab-first-last-inline-margin: calc(var(--tab-min-height) / 2);
+    }
+}
+
+.tab-background
+{
+/*     background-image: linear-gradient(#D2E7F2,#ccdde6) !important; */
+    background-image: linear-gradient(#ccc,#bbb) !important;
+
+/*     background-image: linear-gradient(rgba(255, 255, 255, 0.7), rgba(229, 229, 229, 0.7)) !important; */
+}
+
+.tabbrowser-tab[visuallyselected] .tab-background
+{
+/*     background-image: linear-gradient(#ffffff,#e5e5e5) !important; */
+/*     background-image: linear-gradient(#ffffff,#fefefe) !important; */
+
+    background-image: linear-gradient(#ffffff,#f4f4f4) !important;
+
+/*     background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(229, 229, 229, 1)) !important; */
+}
+
+.tab-label
+{
+    color: #555555 !important;
+}
+
+.tabbrowser-tab:not([pinned]) .tab-icon-stack > *
+{
+    margin-left: 16px !important;
+}
+
+:root
+{
+    --tab-min-height: 24px !important;
+}
+
+.tabbrowser-tab[selected]
+{
+    max-width: 180px !important;
+    margin-right: 12px !important;
+    max-height: 24px !important;
+    min-height: 24px !important;
+    bottom: calc(32px - (32px + (32px - 24px))) !important;
+}
+
+tab:not([selected="true"])
+{
+    max-width: 180px !important;
+    margin-right: 12px !important;
+    max-height: 24px !important;
+    min-height: 24px !important;
+    bottom: calc(32px - (32px + (32px - 24px))) !important;
+}
+
+/* todo need to fix ghost tab issue */
+.titlebar-spacer[type="post-tabs"]
+{
+    width: 0px !important;
+}
+
+
+
+/*.tabbrowser-tab
+{
+    max-width: 200px !important;
+}*/
+
+/* Override font-weight for tabs */
+/*.tabbrowser-tab
+{
+    font-weight: 500 !important;
+}*/
+
+/* Override font-weight for selected tab */
+/*.tabbrowser-tab:is([selected])
+{
+    font-weight: 600 !important;
+}*/
+}
+
+

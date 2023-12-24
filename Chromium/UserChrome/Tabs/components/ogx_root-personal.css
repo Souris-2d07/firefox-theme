@@ -1,0 +1,35 @@
+@layer final
+{
+
+    @media not (prefers-color-scheme: dark), (prefers-color-scheme: dark)
+    {
+    :root
+    {
+        --gray: #686868;
+        --general-color: var(--lwt-toolbarbutton-icon-fill-attention, var(--gray));
+    }
+    }
+}
+
+:root
+{
+    --purple: #8d35e2;
+    --tab-height-personal: 24px ;        /* Tamaño altura de pestañas*/
+
+    /*-----------------------------------Gradientes------------------------------------*/
+    --gradient: var(--general-color) !important;
+    --panel-separator-zap-gradient2: linear-gradient(to right, color-mix(in srgb, var(--general-color) 80%, var(--toolbar-bgcolor, Field)) 82% , transparent 96%) !important;
+
+    /*------------------------------Botones hover, clic--------------------------------*/
+    --button-bgcolor: color-mix(in srgb, var(--general-color) 40%, transparent) !important;             /*Color de buttons*/
+    --button-hover-bgcolor: color-mix(in srgb, var(--general-color) 55%, transparent) !important;       /*Color fondo de menuitems :hover*/
+    --button-active-bgcolor: color-mix(in srgb, var(--general-color) 75%, transparent) !important;      /*color clic en menuitems*/
+}
+
+@media (-moz-platform: linux)
+{
+    :root
+    {
+        --panel-separator-zap-gradient2: linear-gradient(to right, color-mix(in srgb, var(--general-color) 80%, var(--toolbar-bgcolor, Field)) 92% , transparent 100%) !important;
+    }
+}

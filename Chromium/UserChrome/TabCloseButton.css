@@ -1,0 +1,16 @@
+.tab-close-button
+{
+    width: 13px !important;
+    height: 13px !important;
+    color: black !important;
+    border-radius: 50% !important;
+    padding: 2px !important;
+}
+
+.tab-close-button:hover
+{
+    --tab-close-button-color: rgb(219, 68, 55);
+    box-shadow: 0px 0px 2px color-mix(in srgb, var(--tab-close-button-color) 90%, black) !important;
+    background-color: var(--tab-close-button-color) !important;
+    color: white !important;
+}

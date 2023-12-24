@@ -1,0 +1,38 @@
+:root
+{
+    --panel-item-hover-bgcolor: #257ad7 !important;
+    --panel-item-active-bgcolor: color-mix(in srgb, var(--panel-item-hover-bgcolor) 70%, black) !important;
+    --panel-shortcut-color: #888 !important;
+    --arrowpanel-menuitem-padding: 0px 12px 0px 28px !important;
+}
+
+#appMenu-protonMainView > .panel-subview-body > .subviewbutton
+{
+    max-height: 24px !important;
+}
+
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton
+{
+    color: black !important;
+}
+
+#appMenu-protonMainView > .panel-subview-body > toolbarbutton:hover
+{
+    color: white !important;
+}
+
+#appMenu-protonMainView > .panel-subview-body > toolbarseparator
+{
+    border-top: 1px solid #ddd !important;
+}
+
+#appMenu-fxa-status2
+{
+    display: none !important;
+}
+
+#appMenu-fxa-separator
+{
+    display: none !important;
+}
+

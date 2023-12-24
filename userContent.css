@@ -1,0 +1,9 @@
+/* Chromium */
+@import url("Chromium/UserContent/AboutAddons/AboutAddons.css");
+@import url("Chromium/UserContent/AboutPreferences/AboutPreferences.css");
+
+/* Tweaks */
+@import url("Tweaks/UserContent/AboutNewTab/NewTabActivityStreamPage.css");
+@import url("Tweaks/UserContent/AboutAddons/CustomAddonPageHeaders.css");
+@import url("Tweaks/UserContent/AboutAddons/HideRecommendedAddons.css");
+@import url("Tweaks/UserContent/AboutPreferences/HideCategoryIcons.css");
