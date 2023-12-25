@@ -5,13 +5,13 @@
     display: block !important;
 }
 
-:root:is([tabsintitlebar][sizemode="maximized"]) #toolbar-menubar .titlebar-buttonbox-container
+:root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar .titlebar-buttonbox-container
 {
     right: -6px; /*-2px;*/
     top: 0px;
 }
 
-:root:is([tabsintitlebar][sizemode="normal"]) #toolbar-menubar .titlebar-buttonbox-container
+:root[tabsintitlebar][sizemode="normal"] #toolbar-menubar .titlebar-buttonbox-container
 {
     right: calc(var(--aero-padding) - 7px);
     top: 1px;
@@ -30,8 +30,7 @@
 
 
 
-:root:is([tabsintitlebar])
-{
+
     .titlebar-min                                 { list-style-image: none !important; }
     .titlebar-min:hover                           { list-style-image: none !important; }
     .titlebar-min:active                          { list-style-image: none !important; }
@@ -85,12 +84,10 @@
     {
         box-shadow: 0px 0px 8px #ff6666 !important;
     }
-}
 
 
-:root:not(:-moz-lwtheme,:-moz-window-inactive),
-:root:is([privatebrowsingmode="temporary"][tabsintitlebar]):not(:-moz-window-inactive)
-{
+
+
   .titlebar-min::before, .titlebar-min:hover::before         { --icon-titlebar-min:            url("../Assets/minimize.png"); }
   .titlebar-min::after,  .titlebar-min:hover::after          { --icon-titlebar-min-hover:      url("../Assets/minimize-hover.png"); }
   .titlebar-min:active                                       { --icon-titlebar-min-active:     url("../Assets/minimize-active.png"); }
@@ -106,27 +103,25 @@
   .titlebar-close::before, .titlebar-close:hover::before     { --icon-titlebar-close:          url("../Assets/close.png"); }
   .titlebar-close::after,  .titlebar-close:hover::after      { --icon-titlebar-close-hover:    url("../Assets/close-hover.png"); }
   .titlebar-close:active                                     { --icon-titlebar-close-active:   url("../Assets/close-active.png"); }
-}
 
-:root:-moz-window-inactive:not(:-moz-lwtheme),
-:root:-moz-window-inactive:is([privatebrowsingmode="temporary"][tabsintitlebar])
-{
-  .titlebar-min::before, .titlebar-min:hover::before         { --icon-titlebar-min:            url("../Assets/minimize-backdrop.png"); }
-  .titlebar-min::after,  .titlebar-min:hover::after          { --icon-titlebar-min-hover:      url("../Assets/minimize-hover-backdrop.png"); }
-  .titlebar-min:active                                       { --icon-titlebar-min-active:     url("../Assets/minimize-active-backdrop.png"); }
 
-  .titlebar-max::before, .titlebar-max:hover::before         { --icon-titlebar-max:            url("../Assets/maximize-backdrop.png"); }
-  .titlebar-max::after,  .titlebar-max:hover::after          { --icon-titlebar-max-hover:      url("../Assets/maximize-hover-backdrop.png"); }
-  .titlebar-max:active                                       { --icon-titlebar-max-active:     url("../Assets/maximize-active-backdrop.png"); }
 
-  .titlebar-restore::before, .titlebar-restore:hover::before { --icon-titlebar-restore:        url("../Assets/restore-backdrop.png"); }
-  .titlebar-restore::after,  .titlebar-restore:hover::after  { --icon-titlebar-restore-hover:  url("../Assets/restore-hover-backdrop.png"); }
-  .titlebar-restore:active                                   { --icon-titlebar-restore-active: url("../Assets/restore-active-backdrop.png"); }
+  .titlebar-min:-moz-window-inactive::before, .titlebar-min:-moz-window-inactive:hover::before         { --icon-titlebar-min:            url("../Assets/minimize-backdrop.png"); }
+  .titlebar-min:-moz-window-inactive::after,  .titlebar-min:-moz-window-inactive:hover::after          { --icon-titlebar-min-hover:      url("../Assets/minimize-hover-backdrop.png"); }
+  .titlebar-min:-moz-window-inactive:active                                       { --icon-titlebar-min-active:     url("../Assets/minimize-active-backdrop.png"); }
 
-  .titlebar-close::before, .titlebar-close:hover::before     { --icon-titlebar-close:          url("../Assets/close-backdrop.png"); }
-  .titlebar-close::after,  .titlebar-close:hover::after      { --icon-titlebar-close-hover:    url("../Assets/close-hover-backdrop.png"); }
-  .titlebar-close:active                                     { --icon-titlebar-close-active:   url("../Assets/close-active-backdrop.png"); }
-}
+  .titlebar-max:-moz-window-inactive::before, .titlebar-max:-moz-window-inactive:hover::before         { --icon-titlebar-max:            url("../Assets/maximize-backdrop.png"); }
+  .titlebar-max:-moz-window-inactive::after,  .titlebar-max:-moz-window-inactive:hover::after          { --icon-titlebar-max-hover:      url("../Assets/maximize-hover-backdrop.png"); }
+  .titlebar-max:-moz-window-inactive:active                                       { --icon-titlebar-max-active:     url("../Assets/maximize-active-backdrop.png"); }
+
+  .titlebar-restore:-moz-window-inactive::before, .titlebar-restore:-moz-window-inactive:hover::before { --icon-titlebar-restore:        url("../Assets/restore-backdrop.png"); }
+  .titlebar-restore:-moz-window-inactive::after,  .titlebar-restore:-moz-window-inactive:hover::after  { --icon-titlebar-restore-hover:  url("../Assets/restore-hover-backdrop.png"); }
+  .titlebar-restore:-moz-window-inactive:active                                   { --icon-titlebar-restore-active: url("../Assets/restore-active-backdrop.png"); }
+
+  .titlebar-close:-moz-window-inactive::before, .titlebar-close:-moz-window-inactive:hover::before     { --icon-titlebar-close:          url("../Assets/close-backdrop.png"); }
+  .titlebar-close:-moz-window-inactive::after,  .titlebar-close:-moz-window-inactive:hover::after      { --icon-titlebar-close-hover:    url("../Assets/close-hover-backdrop.png"); }
+  .titlebar-close:-moz-window-inactive:active                                     { --icon-titlebar-close-active:   url("../Assets/close-active-backdrop.png"); }
+
 
 
 

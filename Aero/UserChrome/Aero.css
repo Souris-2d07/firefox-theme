@@ -1,19 +1,9 @@
-@import url("Transparency.css")
-    layer(HighPriority)
-    (-moz-platform: linux);
+@import url("Transparency.css");
+@import url("WindowButtons.css");
+@import url("AeroTweakChromeBorderConnect.css");
+@import url("Tooltips.css");
 
-@import url("WindowButtons.css")
-    layer(HighPriority)
-    (-moz-platform: linux);
-
-@import url("WindowButtonsBasic.css")
-    layer(HighPriority)
-    (-moz-platform: linux);
-
-@import url("AeroTweakChromeBorderConnect.css") layer(HighPriority) (-moz-platform: linux);
-@import url("Tooltips.css") layer(HighPriority) (-moz-platform: linux);
-
-@media (-moz-bool-pref: "userChromes.ChromiumFX.HiDPI")
+@supports (-moz-bool-pref("userChromes.ChromiumFX.HiDPI"))
 {
     :root
     {
@@ -25,7 +15,7 @@
     }
 }
 
-@media not (-moz-bool-pref: "userChromes.ChromiumFX.HiDPI")
+@supports not (-moz-bool-pref("userChromes.ChromiumFX.HiDPI"))
 {
     :root
     {
@@ -49,11 +39,7 @@
 
 /* Aero outer and inner borders */
 /* System theme, not maximized, tabs in titlebar */
-:root:not(:-moz-lwtheme)[sizemode="normal"][tabsintitlebar] > body,
-/* Private browsing, not maximized, tabs in titlebar */
-:root:is([sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"],
-         [sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"][style*="--lwt-additional-images"],
-         [sizemode="normal"][tabsintitlebar][privatebrowsingmode="temporary"][lwtheme-image]) > body
+#main-window[tabsintitlebar][sizemode="normal"]
 {
     width: calc(100% - calc(var(--aero-padding) * 2) - calc(var(--aero-border) * 2)) !important;
     height: calc(100% - var(--aero-padding) - calc(var(--aero-border) * 2)) !important;
@@ -66,31 +52,31 @@
     padding-right: var(--aero-padding) !important;
     padding-bottom: var(--aero-padding) !important;
     padding-top: 0px !important;
-
-    #browser,
-    #customization-container
+}
+    :root[tabsintitlebar][sizemode="normal"] #browser,
+    :root[tabsintitlebar][sizemode="normal"] #customization-container
     {
-        border-image-slice: 2 2 2 2;
-        border-image-width: 2px 2px 2px 2px;
-        border-image-outset: 0px 0px 0px 0px;
-        border-image-repeat: repeat repeat;
-        border-image-source: url("../Assets/aero-inner-border-no-top.png");
-        border-style: solid;
+        border-image-slice: 2 2 2 2 !important;
+        border-image-width: 2px 2px 2px 2px !important;
+        border-image-outset: 0px 0px 0px 0px !important;
+        border-image-repeat: repeat repeat !important;
+        border-image-source: url("../Assets/aero-inner-border-no-top.png") !important;
+        border-style: solid !important;
         border-width: 2px !important;
         border-top: none !important;
     }
 
-    #customization-container
+    :root[tabsintitlebar][sizemode="normal"] #customization-container
     {
         background-color: transparent !important;
     }
 
-    #customization-content-container,
-    #customization-footer
+    :root[tabsintitlebar][sizemode="normal"] #customization-content-container,
+    :root[tabsintitlebar][sizemode="normal"] #customization-footer
     {
         background-color: color-mix(in srgb, -moz-dialog 85%, white);
     }
-}
+
 
 
 /* Aero Background Glow */
@@ -141,53 +127,50 @@
         !important;
 }
 
-:root[tabsintitlebar][sizemode="normal"]
-{
-    #TabsToolbar
+
+    :root[tabsintitlebar][sizemode="normal"] #TabsToolbar
     {
         padding-block-start: var(--windowed-top-padding, 0px) !important;
     }
 
-    #toolbar-menubar + #TabsToolbar
+    :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar + #TabsToolbar
     {
         --windowed-top-padding: var(--aero-top-padding-windowed-menu);
     }
 
-    #toolbar-menubar[inactive="true"] + #TabsToolbar
+    :root[tabsintitlebar][sizemode="normal"] #toolbar-menubar[inactive="true"] + #TabsToolbar
     {
         --windowed-top-padding: var(--aero-top-padding-windowed);
     }
 
-    #nav-bar
+    :root[tabsintitlebar][sizemode="normal"] #nav-bar
     {
         margin-left: 1px;
         margin-right: 1px;
     }
-}
 
-:root[tabsintitlebar][sizemode="maximized"]
-{
-    #TabsToolbar
+
+
+    :root[tabsintitlebar][sizemode="maximized"] #TabsToolbar
     {
         padding-block-start: var(--windowed-top-padding, 0px) !important;
     }
 
-    #toolbar-menubar + #TabsToolbar
+    :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar + #TabsToolbar
     {
         --windowed-top-padding: var(--aero-top-padding-maximized);
     }
 
-    #toolbar-menubar[inactive="true"] + #TabsToolbar
+    :root[tabsintitlebar][sizemode="maximized"] #toolbar-menubar[inactive="true"] + #TabsToolbar
     {
         --windowed-top-padding: var(--aero-top-padding-maximized);
     }
 
-    #nav-bar
+    :root[tabsintitlebar][sizemode="maximized"] #nav-bar
     {
         margin-left: 1px;
         margin-right: 1px;
     }
-}
 
 /* Menubar text */
 #main-menubar

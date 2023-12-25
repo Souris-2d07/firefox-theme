@@ -4,7 +4,7 @@
 @import url("Chromium/UserChrome/Tabs/userChrome.css");
 
 /* Aero */
-@import url("Aero/UserChrome/Aero.css") layer(Aero) (-moz-bool-pref: "userChromes.ChromiumFX.Aero");
+@import url("Aero/UserChrome/Aero.css") layer(Aero) supports(-moz-bool-pref("userChromes.ChromiumFX.Aero"));
 
 /* Chromium */
 @import url("Chromium/UserChrome/Icons.css");
@@ -52,7 +52,7 @@
 
 /* Extra Aero fixed (todo) */
 
-@media (-moz-bool-pref: "userChromes.ChromiumFX.Aero")
+@supports (-moz-bool-pref("userChromes.ChromiumFX.Aero"))
 {
 :root[sizemode="normal"] #nav-bar
 {

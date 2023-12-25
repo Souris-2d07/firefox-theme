@@ -20,8 +20,7 @@
 
 @media (-moz-gtk-csd-available)
 {
-    :root:not(:-moz-lwtheme)
-    {
+
         #nav-bar
         {
             --navbar-gradient: linear-gradient(#f4f4f4,#dddddd);
@@ -73,7 +72,7 @@
         {
             background-image: var(--tab-hover-gradient) !important;
         }
-    }
+
 }
 
 @layer Chromium

@@ -2,14 +2,22 @@
 
 Unfinished - Provided as is
 
-CSS:
+Place root folder containing README.md in firefox profile chrome folder,
+then rename it from "firefox-theme" to "ChromiumFX"
 
-@import url("ChromiumFX/userChrome.css") (-moz-bool-pref: "userChromes.ChromiumFX.Enabled");
+add the following into userChrome.css in chrome folder:
 
-about:config:
+@layer Dark, Light, PrivateBrowsing, GoogleChrome, Aero, final;
 
-userChromes.ChromiumFX.Enabled
-userChromes.ChromiumFX.Aero
+@import url("ChromiumFX/userChrome.css");
+
+Set the following values to true in about:config:
+
+- userChromes.ChromiumFX.Enabled
+- userChromes.ChromiumFX.Aero
+- toolkit.legacyUserProfileCustomizations.stylesheets
+- svg.context-properties.content.enabled
+
 
 KDE: force-blur script - add Navigator to config
 
