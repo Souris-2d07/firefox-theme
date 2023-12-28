@@ -64,7 +64,7 @@
     {
         -moz-default-appearance: none !important;
         padding: 0px !important;
-        transition: box-shadow .25s ease-out !important;
+        transition: box-shadow .1s ease-out !important;
     }
 
     /* Blue button glow */
@@ -76,14 +76,14 @@
     .titlebar-restore:-moz-window-inactive:hover
     {
         transform: translateZ(40px) !important;
-        box-shadow: 0px 0px 10px aqua !important;
+        box-shadow: 0px 0px 5px aqua !important;
     }
 
     /* Red button glow */
     .titlebar-close:hover,
     .titlebar-close:-moz-window-inactive:hover
     {
-        box-shadow: 0px 0px 8px #ff6666 !important;
+        box-shadow: 0px 0px 6px #ff6666 !important;
     }
 }
 
@@ -215,7 +215,7 @@
 .titlebar-min::before,
 .titlebar-min:hover::after
 {
-  animation: fadeInFromNone 0.1s ease-out forwards;
+  animation: fadeInFromNone 0.01s ease-out forwards;
 }
 
 .titlebar-min:hover::before,
@@ -311,7 +311,7 @@
 .titlebar-max::before,
 .titlebar-max:hover::after
 {
-  animation: fadeInFromNone 0.1s ease-out forwards;
+  animation: fadeInFromNone 0.01s ease-out forwards;
 }
 
 .titlebar-max:hover::before,
@@ -402,7 +402,7 @@
 .titlebar-restore::before,
 .titlebar-restore:hover::after
 {
-  animation: fadeInFromNone 0.1s ease-out forwards;
+  animation: fadeInFromNone 0.01s ease-out forwards;
 }
 
 .titlebar-restore:hover::before,
@@ -514,7 +514,7 @@
 .titlebar-close::before,
 .titlebar-close:hover::after
 {
-  animation: fadeInFromNone 0.1s ease-out forwards;
+  animation: fadeInFromNone 0.01s ease-out forwards;
 }
 
 .titlebar-close::after,
